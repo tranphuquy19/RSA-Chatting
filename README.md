@@ -11,3 +11,5 @@
 ![Cap4](images/Capture04.PNG)
 
 ![Cap5](images/Capture05.PNG)
+
+![Cap6](images/Capture06.PNG)
