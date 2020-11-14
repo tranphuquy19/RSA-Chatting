@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using Dora;
 
 namespace Server
 {
@@ -75,29 +76,43 @@ namespace Server
         void Send()
         {
             NetworkStream networkStream = new NetworkStream(this.clientSocket);
-            StreamWriter streamWriter = new StreamWriter(networkStream);
+            //StreamWriter streamWriter = new StreamWriter(networkStream);
+
             while (true)
             {
                 string str = Console.ReadLine();
-                streamWriter.WriteLine(str);
-                streamWriter.Flush();
+
+                PostMan postMan = new PostMan()
+                {
+                    Type = PostMan.PostManType.SEND_MESSAGE,
+                    Payload = UnicodeEncoding.UTF8.GetBytes(str)
+                };
+
+                PostMan.SendPackage(networkStream, postMan);
+
+                //streamWriter.WriteLine(str);
+                //streamWriter.Flush();
                 if (str.ToUpper().Equals("QUIT")) break;
             }
-            streamWriter.Close();
+
+            //streamWriter.Close();
             networkStream.Close();
         }
 
         void Receive()
         {
             NetworkStream networkStream = new NetworkStream(clientSocket);
-            StreamReader streamReader = new StreamReader(networkStream);
+            //StreamReader streamReader = new StreamReader(networkStream);
             while (true)
             {
-                string receiveStr = streamReader.ReadLine();
-                Console.WriteLine("message from client: " + receiveStr);
-                if (receiveStr.ToUpper().Equals("QUIT")) break;
+                PostMan postMan = PostMan.GetPackage(networkStream);
+                Console.WriteLine(postMan);
+                if (postMan.Type == PostMan.PostManType.DISCONNECT) break;
+                //string receiveStr = streamReader.ReadLine();
+                //Console.WriteLine("message from client: " + receiveStr);
+                //if (receiveStr.ToUpper().Equals("QUIT")) break;
             }
-            streamReader.Close();
+            //streamReader.Close();
             networkStream.Close();
         }
     }

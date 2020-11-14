@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Christian\\.nuget\\packages\\": {}
+    "C:\\Users\\Tran Phu Quy\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Christian\\source\\repos\\RsaChatting\\RsaChatting\\RsaChatting.csproj",
+      "projectUniqueName": "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\RsaChatting\\RsaChatting.csproj",
       "projectName": "RsaChatting",
-      "projectPath": "C:\\Users\\Christian\\source\\repos\\RsaChatting\\RsaChatting\\RsaChatting.csproj",
-      "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Christian\\source\\repos\\RsaChatting\\RsaChatting\\obj\\",
+      "projectPath": "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\RsaChatting\\RsaChatting.csproj",
+      "packagesPath": "C:\\Users\\Tran Phu Quy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\RsaChatting\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Christian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tran Phu Quy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,7 +36,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -44,7 +47,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -55,15 +57,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WindowsForms": {
-            "privateAssets": "none"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,8 @@
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\bin\Debug\netstandard2.0\Dora.deps.json
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\bin\Debug\netstandard2.0\Dora.dll
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\bin\Debug\netstandard2.0\Dora.pdb
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\obj\Debug\netstandard2.0\Dora.csprojAssemblyReference.cache
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\obj\Debug\netstandard2.0\Dora.AssemblyInfoInputs.cache
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\obj\Debug\netstandard2.0\Dora.AssemblyInfo.cs
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\obj\Debug\netstandard2.0\Dora.dll
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Dora\obj\Debug\netstandard2.0\Dora.pdb

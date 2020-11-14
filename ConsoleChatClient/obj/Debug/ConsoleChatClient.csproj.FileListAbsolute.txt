@@ -5,3 +5,12 @@ C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleC
 C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.exe
 C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.pdb
 C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.csprojAssemblyReference.cache
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\bin\Debug\ConsoleChatClient.exe.config
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\bin\Debug\ConsoleChatClient.exe
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\bin\Debug\ConsoleChatClient.pdb
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\bin\Debug\Dora.dll
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\bin\Debug\Dora.pdb
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.csprojAssemblyReference.cache
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.csproj.CopyComplete
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.exe
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.pdb
