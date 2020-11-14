@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChatClient", "Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp", "ChatApp\ChatApp.csproj", "{74CD9702-F546-481E-81E1-19CCF24E204C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dora", "Dora\Dora.csproj", "{06BF70F4-B2A3-4255-8F11-DDDAFE77FC3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dora", "Dora\Dora.csproj", "{06BF70F4-B2A3-4255-8F11-DDDAFE77FC3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F20D3D0D-4DF0-4E10-9DA0-0052E3E8F75D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{06BF70F4-B2A3-4255-8F11-DDDAFE77FC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BF70F4-B2A3-4255-8F11-DDDAFE77FC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06BF70F4-B2A3-4255-8F11-DDDAFE77FC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20D3D0D-4DF0-4E10-9DA0-0052E3E8F75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20D3D0D-4DF0-4E10-9DA0-0052E3E8F75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20D3D0D-4DF0-4E10-9DA0-0052E3E8F75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20D3D0D-4DF0-4E10-9DA0-0052E3E8F75D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,14 +14,22 @@ namespace Dora
         public RSAParameters PubKey { get; set; }
         public RSAParameters PriKey { get; set; }
 
-        public Mysterio() { }
+        public Mysterio()
+        {
+            this.CSP = new RSACryptoServiceProvider();
+        }
 
         public Mysterio(int keySize)
         {
             this.KeySize = keySize;
             this.CSP = new RSACryptoServiceProvider(this.KeySize);
-            this.PubKey = this.CSP.ExportParameters(false);
             this.PriKey = this.CSP.ExportParameters(true);
+            this.PubKey = this.CSP.ExportParameters(false);
+        }
+
+        public static RSAParameters ConvertBytesToKey(byte[] keyBytes)
+        {
+            return ConvertStringToKey(Encoding.Unicode.GetString(keyBytes));
         }
 
         public static string ConvertKeyToString(RSAParameters key)
@@ -57,7 +65,7 @@ namespace Dora
             return Convert.ToBase64String(CreateCypherBytes(plainText));
         }
 
-        public byte[] DecryptCypherBytes(byte[] cypherBytes)
+        public byte[] DecryptCypherToBytes(byte[] cypherBytes)
         {
             if (this.CSP == null) throw new Exception("Invalid CryptoServiceProvider! Please ImportParameters(key);");
             byte[] plainTextBytes = this.CSP.Decrypt(cypherBytes, false);
@@ -67,12 +75,16 @@ namespace Dora
         public string DecryptCypherToString(string base64CypherStr)
         {
             byte[] cypherBytes = Convert.FromBase64String(base64CypherStr);
-            return Encoding.Unicode.GetString(DecryptCypherBytes(cypherBytes));
+            return Encoding.Unicode.GetString(DecryptCypherToBytes(cypherBytes));
+        }
+
+        public string DecryptCypherToString(byte[] base64CypherBytes)
+        {
+            return DecryptCypherToString(Encoding.Unicode.GetString(base64CypherBytes));
         }
 
         public void ImportParameters(RSAParameters key)
         {
-            this.CSP = new RSACryptoServiceProvider();
             this.CSP.ImportParameters(key);
         }
 
@@ -80,6 +92,11 @@ namespace Dora
         {
             RSAParameters key = ConvertStringToKey(keyString);
             ImportParameters(key);
+        }
+
+        public void ImportParameters(byte[] keyBytes)
+        {
+            ImportParameters(Encoding.Unicode.GetString(keyBytes));
         }
     }
 }

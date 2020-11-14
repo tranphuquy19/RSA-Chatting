@@ -1,0 +1,9 @@
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\bin\Debug\Test.exe.config
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\bin\Debug\Test.exe
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\bin\Debug\Test.pdb
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\bin\Debug\Dora.dll
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\bin\Debug\Dora.pdb
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\obj\Debug\Test.exe
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\Test\obj\Debug\Test.pdb
