@@ -1,0 +1,6 @@
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\RsaConsoleImplement\bin\Debug\RsaConsoleImplement.exe.config
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\RsaConsoleImplement\bin\Debug\RsaConsoleImplement.exe
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\RsaConsoleImplement\bin\Debug\RsaConsoleImplement.pdb
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\RsaConsoleImplement\obj\Debug\RsaConsoleImplement.csprojAssemblyReference.cache
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\RsaConsoleImplement\obj\Debug\RsaConsoleImplement.exe
+C:\Users\Tran Phu Quy\Source\Repos\tranphuquy19\RSA-Chatting\RsaConsoleImplement\obj\Debug\RsaConsoleImplement.pdb

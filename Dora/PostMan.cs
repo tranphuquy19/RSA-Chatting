@@ -16,7 +16,7 @@ namespace Dora
         public PostMan()
         {
             this.Type = PostManType.SEND_MESSAGE;
-            this.Payload = UnicodeEncoding.UTF8.GetBytes("");
+            this.Payload = Encoding.Unicode.GetBytes("");
         }
 
         public PostMan(PostManType type, byte[] payload)
@@ -33,7 +33,6 @@ namespace Dora
         public static PostMan GetPackage(NetworkStream netStream)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            //netStream.Seek(0, System.IO.SeekOrigin.Begin);
 
             PostMan postMan = (PostMan)formatter.Deserialize(netStream);
             return postMan;
@@ -41,7 +40,7 @@ namespace Dora
 
         public override string ToString()
         {
-            return "Type: " + this.Type.ToString() + ", Payload: " + UnicodeEncoding.UTF8.GetString(this.Payload);
+            return "Type: " + this.Type.ToString() + ", Payload: " + Encoding.Unicode.GetString(this.Payload);
         }
     }
 }

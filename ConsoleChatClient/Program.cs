@@ -14,20 +14,23 @@ namespace Client
 
     class Client
     {
-        public Socket clientSocket { get; set; }
-        public IPEndPoint ipEndPoint { get; set; }
-        public string serverIP { get; set; }
-        public int serverPort { get; set; }
+        public Socket ClientSocket { get; set; }
+        public IPEndPoint IpEndPoint { get; set; }
+        public string ServerIp { get; set; }
+        public int ServerPort { get; set; }
+        public Mysterio ServerMysterio { get; set; }
+        public Mysterio ClientMysterio { get; set; }
 
         public Client() { }
         public Client(string serverIP, int serverPort)
         {
-            this.serverIP = serverIP;
-            this.serverPort = serverPort;
-            this.ipEndPoint = new IPEndPoint(IPAddress.Parse(serverIP), serverPort);
+            this.ClientMysterio = new Mysterio(2048);
+            this.ServerIp = serverIP;
+            this.ServerPort = serverPort;
+            this.IpEndPoint = new IPEndPoint(IPAddress.Parse(serverIP), serverPort);
             try
             {
-                this.clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                this.ClientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 Start();
             }
             catch (Exception e)
@@ -41,9 +44,11 @@ namespace Client
         {
             try
             {
-                this.clientSocket.Connect(this.ipEndPoint);
-                new ServerThread(this.clientSocket);
-            } catch(Exception e)
+                this.ClientSocket.Connect(this.IpEndPoint);
+                Thread send = new Thread(new ThreadStart(Send)); send.Start();
+                Thread receive = new Thread(new ThreadStart(Receive)); receive.Start();
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -51,64 +56,48 @@ namespace Client
 
         private void Stop()
         {
-            if (this.clientSocket != null)
-                this.clientSocket.Close();
+            if (this.ClientSocket != null)
+                this.ClientSocket.Close();
         }
 
-    }
-
-    class ServerThread
-    {
-        Socket serverSocket;
-
-        public ServerThread(Socket serverSocket)
-        {
-            this.serverSocket = serverSocket;
-            Thread send = new Thread(new ThreadStart(Send)); send.Start();
-            Thread receive = new Thread(new ThreadStart(Receive)); receive.Start();
-        }
 
         void Send()
         {
-            NetworkStream networkStream = new NetworkStream(this.serverSocket);
-            //StreamWriter streamWriter = new StreamWriter(networkStream);
-
+            NetworkStream networkStream = new NetworkStream(this.ClientSocket);
             while (true)
             {
                 string str = Console.ReadLine();
+                PostMan postMan = new PostMan();
 
-                PostMan postMan = new PostMan()
+                switch (str.ToUpper())
                 {
-                    Type = PostMan.PostManType.SEND_MESSAGE,
-                    Payload = UnicodeEncoding.UTF8.GetBytes(str)
-                };
+                    case "SEND_KEY":
+                        postMan.Type = PostMan.PostManType.SEND_KEY;
+                        postMan.Payload = Mysterio.ConvertKeyToBytes(this.ClientMysterio.PubKey);
+                        break;
+                    default:
+                        postMan.Type = PostMan.PostManType.SEND_MESSAGE;
+                        postMan.Payload = Encoding.Unicode.GetBytes(str);
+                        break;
+                }
 
                 PostMan.SendPackage(networkStream, postMan);
-
-                //streamWriter.WriteLine(str);
-                //streamWriter.Flush();
                 if (str.ToUpper().Equals("QUIT")) break;
             }
 
-            //streamWriter.Close();
             networkStream.Close();
         }
 
         void Receive()
         {
-            NetworkStream networkStream = new NetworkStream(this.serverSocket);
-            //StreamReader streamReader = new StreamReader(networkStream);
+            NetworkStream networkStream = new NetworkStream(this.ClientSocket);
             while (true)
             {
 
                 PostMan postMan = PostMan.GetPackage(networkStream);
                 Console.WriteLine(postMan);
                 if (postMan.Type == PostMan.PostManType.DISCONNECT) break;
-                //string receiveStr = streamReader.ReadLine();
-                //Console.WriteLine("message from client: " + receiveStr);
-                //if (receiveStr.ToUpper().Equals("QUIT")) break;
             }
-            //streamReader.Close();
             networkStream.Close();
         }
     }
@@ -117,6 +106,8 @@ namespace Client
     {
         public static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
             new Client("127.0.0.1", 16057);
         }
     }

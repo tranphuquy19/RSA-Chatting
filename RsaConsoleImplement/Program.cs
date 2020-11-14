@@ -24,7 +24,7 @@ namespace RsaConsoleImplement
                 xs.Serialize(sw, pubKey);
                 pubKeyString = sw.ToString();
             }
-
+            Console.WriteLine(pubKeyString);
             {
                 var sr = new System.IO.StringReader(pubKeyString);
                 var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
@@ -53,6 +53,10 @@ namespace RsaConsoleImplement
             bytesPlainTextData = csp.Decrypt(bytesCypherText, false);
 
             plainTextData = System.Text.Encoding.Unicode.GetString(bytesPlainTextData);
+
+            Console.WriteLine(plainTextData);
+
+            Console.ReadKey();
         }
     }
 }

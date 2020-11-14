@@ -14,21 +14,21 @@ namespace Server
     #region Server class
     class Server
     {
-        public Socket serverSocket { get; set; }
-        public IPEndPoint ipEndPoint { get; set; }
-        public Socket receiveSocket { get; set; }
-        public int serverPort { get; set; }
+        public Socket ServerSocket { get; set; }
+        public IPEndPoint IpEndPoint { get; set; }
+        public Socket ReceiveSocket { get; set; }
+        public int ServerPort { get; set; }
 
         public Server() { }
 
         public Server(int serverPort)
         {
-            this.serverPort = serverPort;
-            this.ipEndPoint = new IPEndPoint(IPAddress.Any, serverPort);
+            this.ServerPort = serverPort;
+            this.IpEndPoint = new IPEndPoint(IPAddress.Any, serverPort);
             try
             {
-                this.serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                serverSocket.Bind(this.ipEndPoint);
+                this.ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                ServerSocket.Bind(this.IpEndPoint);
                 Start();
             }
             catch (Exception e)
@@ -40,43 +40,30 @@ namespace Server
 
         private void Start()
         {
-            this.serverSocket.Listen(100);
+            this.ServerSocket.Listen(100);
             Console.WriteLine("Started server...");
             Console.WriteLine("Waitting for client...");
             while (true)
             {
-                this.receiveSocket = this.serverSocket.Accept();
+                this.ReceiveSocket = this.ServerSocket.Accept();
                 Console.WriteLine("Accepted new client...");
-                new ClientThread(this.receiveSocket);
+
+                Thread send = new Thread(new ThreadStart(Send)); send.Start();
+                Thread receive = new Thread(new ThreadStart(Receive)); receive.Start();
             }
         }
 
         private void Stop()
         {
-            if (this.receiveSocket != null)
-                this.receiveSocket.Close();
-            if (this.serverSocket != null)
-                this.serverSocket.Close();
-        }
-    }
-    #endregion
-
-    #region ClientThread
-    class ClientThread
-    {
-        private Socket clientSocket;
-
-        public ClientThread(Socket clientSocket)
-        {
-            this.clientSocket = clientSocket;
-            Thread send = new Thread(new ThreadStart(Send)); send.Start();
-            Thread receive = new Thread(new ThreadStart(Receive)); receive.Start();
+            if (this.ReceiveSocket != null)
+                this.ReceiveSocket.Close();
+            if (this.ServerSocket != null)
+                this.ServerSocket.Close();
         }
 
         void Send()
         {
-            NetworkStream networkStream = new NetworkStream(this.clientSocket);
-            //StreamWriter streamWriter = new StreamWriter(networkStream);
+            NetworkStream networkStream = new NetworkStream(this.ReceiveSocket);
 
             while (true)
             {
@@ -85,43 +72,36 @@ namespace Server
                 PostMan postMan = new PostMan()
                 {
                     Type = PostMan.PostManType.SEND_MESSAGE,
-                    Payload = UnicodeEncoding.UTF8.GetBytes(str)
+                    Payload = Encoding.Unicode.GetBytes(str)
                 };
 
                 PostMan.SendPackage(networkStream, postMan);
-
-                //streamWriter.WriteLine(str);
-                //streamWriter.Flush();
                 if (str.ToUpper().Equals("QUIT")) break;
             }
 
-            //streamWriter.Close();
             networkStream.Close();
         }
 
         void Receive()
         {
-            NetworkStream networkStream = new NetworkStream(clientSocket);
-            //StreamReader streamReader = new StreamReader(networkStream);
+            NetworkStream networkStream = new NetworkStream(ReceiveSocket);
             while (true)
             {
                 PostMan postMan = PostMan.GetPackage(networkStream);
                 Console.WriteLine(postMan);
                 if (postMan.Type == PostMan.PostManType.DISCONNECT) break;
-                //string receiveStr = streamReader.ReadLine();
-                //Console.WriteLine("message from client: " + receiveStr);
-                //if (receiveStr.ToUpper().Equals("QUIT")) break;
             }
-            //streamReader.Close();
             networkStream.Close();
         }
     }
-    #endregion ClientThread
+    #endregion
 
     class Program
     {
         public static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
             new Server(16057);
         }
     }
