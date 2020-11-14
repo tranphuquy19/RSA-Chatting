@@ -1,0 +1,13 @@
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\bin\Debug\ChatApp.exe.config
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\bin\Debug\ChatApp.exe
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\bin\Debug\ChatApp.pdb
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\bin\Debug\Dora.dll
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\bin\Debug\Dora.pdb
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatApp.csprojAssemblyReference.cache
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatServerApp.DebugForm.resources
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatServerApp.Home.resources
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatApp.Properties.Resources.resources
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatApp.csproj.GenerateResource.cache
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatApp.csproj.CopyComplete
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatApp.exe
+C:\Users\Tran Phu Quy\source\repos\tranphuquy19\RSA-Chatting\ChatServerApp\obj\Debug\ChatApp.pdb

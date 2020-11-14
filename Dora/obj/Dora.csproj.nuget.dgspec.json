@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj": {}
+    "C:\\Users\\Tran Phu Quy\\source\\repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj": {
+    "C:\\Users\\Tran Phu Quy\\source\\repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj",
+        "projectUniqueName": "C:\\Users\\Tran Phu Quy\\source\\repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj",
         "projectName": "Dora",
-        "projectPath": "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj",
+        "projectPath": "C:\\Users\\Tran Phu Quy\\source\\repos\\tranphuquy19\\RSA-Chatting\\Dora\\Dora.csproj",
         "packagesPath": "C:\\Users\\Tran Phu Quy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tran Phu Quy\\Source\\Repos\\tranphuquy19\\RSA-Chatting\\Dora\\obj\\",
+        "outputPath": "C:\\Users\\Tran Phu Quy\\source\\repos\\tranphuquy19\\RSA-Chatting\\Dora\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
