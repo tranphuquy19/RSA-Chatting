@@ -1,0 +1,7 @@
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\bin\Debug\ConsoleChatClient.exe.config
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\bin\Debug\ConsoleChatClient.exe
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\bin\Debug\ConsoleChatClient.pdb
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.csproj.CoreCompileInputs.cache
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.exe
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.pdb
+C:\Users\Christian\source\repos\RsaChatting\ConsoleChatClient\obj\Debug\ConsoleChatClient.csprojAssemblyReference.cache
