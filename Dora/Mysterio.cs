@@ -27,12 +27,48 @@ namespace Dora
             this.PubKey = this.CSP.ExportParameters(false);
         }
 
+        public static byte[] Encrypt(byte[] pubKeyByte, string plainText)
+        {
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(ConvertBytesToKey(pubKeyByte));
+            return rsa.Encrypt(Encoding.Unicode.GetBytes(plainText), false);
+        }
+
+        public static string Decrypt(string priKey, byte[] cypherBytes)
+        {
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(ConvertStringToKey(priKey));
+            byte[] plainTextBytes = rsa.Decrypt(cypherBytes, false);
+            return Encoding.Unicode.GetString(plainTextBytes);
+        }
+
+        public static byte[] Encrypt(RSAParameters pubKey, string plainText)
+        {
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(pubKey);
+            byte[] cypherByte = rsa.Encrypt(Encoding.Unicode.GetBytes(plainText), false);
+            string cypherBase64Str = Convert.ToBase64String(cypherByte);
+            return Encoding.Unicode.GetBytes(cypherBase64Str); //cypherBase64Bytes
+        }
+
+        public static string Decrypt(RSAParameters priKey, byte[] cypherBase64Bytes)
+        {
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(priKey);
+
+            string base64CypherStr = Encoding.Unicode.GetString(cypherBase64Bytes);
+            byte[] cypherBytes = Convert.FromBase64String(base64CypherStr);
+
+            byte[] plainTextBytes = rsa.Decrypt(cypherBytes, false);
+            return Encoding.Unicode.GetString(plainTextBytes);
+        }
+
         public static RSAParameters ConvertBytesToKey(byte[] keyBytes)
         {
             return ConvertStringToKey(Encoding.Unicode.GetString(keyBytes));
         }
 
-        public static string ConvertKeyToString(RSAParameters key)
+        public static string ConvertKeyToXmlString(RSAParameters key)
         {
             StringWriter strWriter = new StringWriter();
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(RSAParameters));
@@ -42,7 +78,7 @@ namespace Dora
 
         public static byte[] ConvertKeyToBytes(RSAParameters key)
         {
-            return Encoding.Unicode.GetBytes(ConvertKeyToString(key));
+            return Encoding.Unicode.GetBytes(ConvertKeyToXmlString(key));
         }
 
         public static RSAParameters ConvertStringToKey(string keyStr)

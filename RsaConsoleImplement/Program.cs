@@ -38,7 +38,9 @@ namespace RsaConsoleImplement
 
             var bytesPlainTextData = System.Text.Encoding.Unicode.GetBytes(plainTextData);
 
-            var bytesCypherText = csp.Encrypt(bytesPlainTextData, false);
+            byte[] bytesCypherText = csp.Encrypt(bytesPlainTextData, false);
+
+            //Console.WriteLine(Encoding.Unicode.GetString(bytesCypherText));
 
             var cypherText = Convert.ToBase64String(bytesCypherText);
 

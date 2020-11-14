@@ -6,35 +6,35 @@ using System.Text;
 namespace Dora
 {
     [Serializable]
-    public class PostMan
+    public class Postman
     {
-        public enum PostManType { SEND_KEY, SEND_MESSAGE, DISCONNECT }
+        public enum PostmanType { SEND_KEY, SEND_MESSAGE, DISCONNECT }
 
-        public PostManType Type { get; set; }
+        public PostmanType Type { get; set; }
         public byte[] Payload { get; set; }
 
-        public PostMan()
+        public Postman()
         {
-            this.Type = PostManType.SEND_MESSAGE;
+            this.Type = PostmanType.SEND_MESSAGE;
             this.Payload = Encoding.Unicode.GetBytes("");
         }
 
-        public PostMan(PostManType type, byte[] payload)
+        public Postman(PostmanType type, byte[] payload)
         {
             this.Type = type;
             this.Payload = payload;
         }
 
-        public static void SendPackage(NetworkStream netStream, PostMan postMan)
+        public static void SendPackage(NetworkStream netStream, Postman postMan)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(netStream, postMan);
         }
-        public static PostMan GetPackage(NetworkStream netStream)
+        public static Postman GetPackage(NetworkStream netStream)
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            PostMan postMan = (PostMan)formatter.Deserialize(netStream);
+            Postman postMan = (Postman)formatter.Deserialize(netStream);
             return postMan;
         }
 
