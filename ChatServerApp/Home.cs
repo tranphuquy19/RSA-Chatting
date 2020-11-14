@@ -141,8 +141,6 @@ namespace ChatServerApp
             {
                 //MessageBox.Show(e.Message);
                 Stop();
-                //if (this.MainThread.IsAlive) this.MainThread.Abort();
-                //this.MainThread = null;
             }
         }
 
@@ -165,13 +163,8 @@ namespace ChatServerApp
             }
             catch (Exception e)
             {
-                Stop();
-                //if (this.MainThread != null)
-                //{
-                //    if (this.MainThread.IsAlive) this.MainThread.Abort();
-                //}
-                //this.MainThread = null;
                 //MessageBox.Show(e.Message);
+                Stop();
             }
 
         }

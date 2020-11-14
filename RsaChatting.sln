@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dora", "Dora\Dora.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F20D3D0D-4DF0-4E10-9DA0-0052E3E8F75D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServerApp", "ChatServerApp\ChatServerApp.csproj", "{72B8B38E-F90D-4626-9089-CDC7ABDDC597}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp", "ChatServerApp\ChatApp.csproj", "{72B8B38E-F90D-4626-9089-CDC7ABDDC597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
